@@ -13,6 +13,8 @@ const Reservation = () => {
   const [phone, setPhone] = useState("");
   const navigate = useNavigate();
 
+  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
   const handleReservation = async (e) => {
     e.preventDefault();
     try {
@@ -20,7 +22,7 @@ const Reservation = () => {
 
       const { data } = await axios.post(
         
-        "http://localhost:4000/api/v1/reservation/send", // Correct endpoint
+        `${BACKEND_URL}/api/v1/reservation/send`, // Correct endpoint
         { firstName, lastName, email, phone, date, time },
         {
           headers: {
