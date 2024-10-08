@@ -22,7 +22,7 @@ const Reservation = () => {
 
       const { data } = await axios.post(
         
-        `${BACKEND_URL}api/v1/reservation/send`, // Correct endpoint
+        `${BACKEND_URL}/api/v1/reservation/send`, // Correct endpoint
         { firstName, lastName, email, phone, date, time },
         {
           headers: {
